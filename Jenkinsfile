@@ -17,8 +17,8 @@ pipeline {
 
     stage('Deploy with Docker Compose') {
       steps {
-        sh 'cd /var/www/todo-list && docker-compose -f docker-compose.yml down'
-        sh 'cd /var/www/todo-list && docker-compose -f docker-compose.yml up --build -d'
+        sh 'cd /var/www/todo-list && docker compose -f docker-compose.yml down'
+        sh 'cd /var/www/todo-list && docker compose -f docker-compose.yml up --build -d'
       }
     }
   }

@@ -11,7 +11,7 @@ pipeline {
 
     stage('Copy changes to production server') {
       steps {
-        sh 'scp -pr * /var/www/todo-list'
+        sh 'cp -pr * /var/www/todo-list'
       }
     }
 

@@ -5,6 +5,7 @@ pipeline {
     stage('Backup current project directory') {
       steps {
         sh 'tar -cvf todo-list_$(date +%Y-%m-%d-%H.%M.%S).tar -C /var/www todo-list'
+        sh 'sudo mv todo-list*.tar /var/lib/jenkins/backup'
         sh 'cd /var/lib/jenkins/backup && ls -t | tail -n +3 | xargs sudo rm -f'
       }
     }
